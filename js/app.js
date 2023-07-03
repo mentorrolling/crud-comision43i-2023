@@ -1,3 +1,13 @@
+class Producto {
+  constructor(id, nombre, detalle, imagen, precio = 0) {
+    this.id = id;
+    this.nombre = nombre;
+    this.detalle = detalle;
+    this.imagen = imagen;
+    this.precio = precio;
+  }
+}
+
 //defino el arreglo productos vacio
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
@@ -76,13 +86,15 @@ const crearProductos = (e) => {
 
   //guardar esos datos en el arreglo productos y en localStorage
   //crear un objeto con los datos
-  const item = {
-    id,
-    nombre,
-    detalle,
-    imagen,
-    precio,
-  };
+  // const item = {
+  //   id,
+  //   nombre,
+  //   detalle,
+  //   imagen,
+  //   precio,
+  // };
+
+  const item = new Producto(id, nombre, detalle, imagen, precio);
 
   //agregarlos al arreglo
   productos.push(item);
