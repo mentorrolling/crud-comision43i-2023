@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crud de javascript</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Administrador de productos</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+          <!-- formulario de carga de productos -->
+          <form id="formulario">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombreProd"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Detalle</label>
+              <textarea
+                class="form-control"
+                id="detalleProd"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <div class="col me-2">
+                <label class="form-label">Url de imagen</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="imagenProd"
+                  placeholder="Escribir URL de la imagen"
+                />
+              </div>
+              <div class="col">
+                <label class="form-label">Precio</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="precioProd"
+                  required
+                />
+              </div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-info">Crear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <!-- tabla de productos  -->
+          <h3>Tabla de productos</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Detalle</th>
+                <th scope="col">Precio</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="updateModal"
+      tabindex="-1"
+      aria-labelledby="updateModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="updateModalLabel">
+              Actualizar producto
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- formulario  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
